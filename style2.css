@@ -415,6 +415,7 @@ h3 {
   }
   .info-box {
     width: 100%;
+    bottom: 5%;
   }
   .carousel-wrapper {
     overflow: hidden;
