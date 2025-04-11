@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="images/logo.png" alt="logo" />
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse modi quod
+        quaerat optio rerum aut illum, expedita dolor eveniet repellat iusto
+        necessitatibus aspernatur distinctio. Ea velit neque harum at officia?
+      </p>
+    </div>
+    <div class="nav-tabs">
+      <button class="nav-btn" onclick="handleNavClick(0, 'manufacturer')">
+        Manufacturer
+      </button>
+      <button class="nav-btn" onclick="handleNavClick(1, 'channel')">
+        Channel Partner
+      </button>
+      <button class="nav-btn" onclick="handleNavClick(2, 'retailer')">
+        Retailer
+      </button>
+    </div>
+
+    <div class="form-sections">
+      <form id="manufacturer-form" class="role-form">
+        <h3>Manufacturer</h3>
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <select required>
+          <option value="" disabled selected>Select your city</option>
+          <option>Mumbai</option>
+          <option>Delhi</option>
+          <option>Bangalore</option>
+          <option>Hyderabad</option>
+          <option>Ahmedabad</option>
+          <option>Chennai</option>
+          <option>Kolkata</option>
+          <option>Pune</option>
+          <option>Jaipur</option>
+          <option>Lucknow</option>
+          <option>Indore</option>
+          <option>Surat</option>
+          <option>Patna</option>
+          <option>Chandigarh</option>
+        </select>
+        <button type="button" onclick="hideForm(this.closest('form'))">
+          Submit
+        </button>
+      </form>
+      <form id="channel-form" class="role-form">
+        <h3>Channel Partner</h3>
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <select required>
+          <option value="" disabled selected>Select your city</option>
+          <option>Mumbai</option>
+          <option>Delhi</option>
+          <option>Bangalore</option>
+          <option>Hyderabad</option>
+          <option>Ahmedabad</option>
+          <option>Chennai</option>
+          <option>Kolkata</option>
+          <option>Pune</option>
+          <option>Jaipur</option>
+          <option>Lucknow</option>
+          <option>Indore</option>
+          <option>Surat</option>
+          <option>Patna</option>
+          <option>Chandigarh</option>
+        </select>
+        <button type="button" onclick="hideForm(this.closest('form'))">
+          Submit
+        </button>
+      </form>
+      <form id="retailer-form" class="role-form">
+        <h3>Retailer</h3>
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <select required>
+          <option value="" disabled selected>Select your city</option>
+          <option>Mumbai</option>
+          <option>Delhi</option>
+          <option>Bangalore</option>
+          <option>Hyderabad</option>
+          <option>Ahmedabad</option>
+          <option>Chennai</option>
+          <option>Kolkata</option>
+          <option>Pune</option>
+          <option>Jaipur</option>
+          <option>Lucknow</option>
+          <option>Indore</option>
+          <option>Surat</option>
+          <option>Patna</option>
+          <option>Chandigarh</option>
+        </select>
+        <button type="button" onclick="hideForm(this.closest('form'))">
+          Submit
+        </button>
+      </form>
+      <div id="thankYouMessage" class="thank-you-message">
+        <div class="tick-container">
+          <svg class="tick-circle" viewBox="0 0 52 52">
+            <circle class="tick-bg" cx="26" cy="26" r="25" fill="none" />
+            <path class="tick-check" fill="none" d="M14 27l7 7 17-17" />
+          </svg>
+        </div>
+        <h3>Thank you, <span id="userNameDisplay"></span>!</h3>
+        <p>We’ve received your submission.</p>
+      </div>
+    </div>
+
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="bg-box">
+          <div class="bg active"></div>
+          <div class="bg"></div>
+          <div class="bg"></div>
+          <div class="bg"></div>
+        </div>
+        <div class="img-box">
+          <div class="img-list">
+            <div class="img-slider">
+              <div class="img-item fruit active" style="--i: 0">
+                <img src="images/img2 (3).png" />
+              </div>
+              <div class="img-item fruit" style="--i: 1">
+                <img src="images/img1 (3).png" />
+              </div>
+              <div class="img-item fruit" style="--i: 2">
+                <img src="images/img3 (3).png" />
+              </div>
+              <div class="img-item fruit" style="--i: 3">
+                <img src="images/fruit4.png" />
+              </div>
+              <div class="img-item" style="--i: 0">
+                <img src="images/j1.png" />
+              </div>
+              <div class="img-item" style="--i: 1">
+                <img src="images/j2.png" />
+              </div>
+              <div class="img-item" style="--i: 2">
+                <img src="images/j3.png" />
+              </div>
+              <div class="img-item" style="--i: 3">
+                <img src="images/j2.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-box">
+          <div class="info-slider">
+            <div class="info-item">
+              <h2>Manufacturer</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Inventore doloremque eum quam quia beatae voluptas, fugiat
+                pariatur ratione ipsum voluptate nobis dignissimos? Eius ratione
+                vero dignissimos sed distinctio minus itaque!
+              </p>
+            </div>
+            <div class="info-item">
+              <h2>Channel Partner</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et
+                provident accusamus nisi, corrupti facere excepturi voluptates
+                nesciunt unde praesentium voluptatibus cumque laudantium illo
+                quibusdam magnam expedita maxime eius sunt!
+              </p>
+            </div>
+            <div class="info-item">
+              <h2>Retailer</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+                similique dolor laboriosam numquam, rerum excepturi blanditiis,
+                voluptates officiis vitae reiciendis error. Odio asperiores
+                repudiandae rem dolor nostrum ab ipsa consequatur?
+              </p>
+            </div>
+            <div class="info-item">
+              <h2>StrawBerry</h2>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const imgSlider = document.querySelector(".img-slider");
+      const imgFruit = document.querySelectorAll(".img-item.fruit");
+      const infoSlider = document.querySelector(".info-slider");
+      const bgs = document.querySelectorAll(".bg-box .bg");
+      const navTabs = document.querySelector(".nav-tabs");
+      const formSections = document.querySelector(".form-sections");
+      const forms = document.querySelectorAll(".role-form");
+
+      let currentIndex = 0;
+
+      function goToSlide(index) {
+        currentIndex = index;
+
+        // Rotate image carousel
+        imgSlider.style.transform = `rotate(${-90 * index}deg)`;
+
+        // Update active fruit
+        document.querySelector(".fruit.active").classList.remove("active");
+        imgFruit[index].classList.add("active");
+
+        // Update active background
+        document.querySelector(".bg.active").classList.remove("active");
+        bgs[index].classList.add("active");
+
+        // Animate info box one-by-one
+        const infoItems = document.querySelectorAll(".info-item");
+        infoItems.forEach((item, i) => {
+          if (i === index) {
+            item.style.display = "block";
+            item.classList.add("active");
+            gsap.fromTo(
+              item,
+              { opacity: 0, y: 20 },
+              { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+            );
+          } else {
+            item.style.display = "none";
+            item.classList.remove("active");
+          }
+        });
+      }
+
+      function handleNavClick(index, type) {
+        goToSlide(index);
+
+        const targetForm = document.getElementById(`${type}-form`);
+        formSections.style.display = "flex";
+
+        // Hide all forms first
+        forms.forEach((form) => {
+          if (form !== targetForm) {
+            gsap.to(form, {
+              scale: 0.8,
+              opacity: 0,
+              duration: 0.3,
+              onComplete: () => {
+                form.style.display = "none";
+              },
+            });
+          }
+        });
+
+        // Show target form
+        // Set display and prepare hidden state
+        targetForm.style.display = "flex";
+        targetForm.style.opacity = 0;
+        targetForm.style.transform = "translateY(40px)";
+
+        // Animate to center smoothly
+        gsap.to(targetForm, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          ease: "power2.out",
+        });
+      }
+
+      function hideForm(formElement) {
+        const nameInput = formElement.querySelector('input[type="text"]');
+        const userName = nameInput ? nameInput.value : "User";
+        document.getElementById("userNameDisplay").textContent = userName;
+
+        gsap.to(formElement, {
+          opacity: 0,
+          scale: 0.9,
+          duration: 0.5,
+          onComplete: () => {
+            formElement.style.display = "none";
+            const thankYou = document.getElementById("thankYouMessage");
+            thankYou.style.display = "flex";
+            gsap.fromTo(
+              thankYou,
+              { opacity: 0, y: 30, scale: 0.8 },
+              { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power2.out" }
+            );
+
+            setTimeout(() => {
+              thankYou.style.display = "none";
+              document.querySelector(".form-sections").style.display = "none";
+              document.querySelector(".carousel-wrapper").style.display =
+                "block";
+              navTabs.style.display = "flex";
+              gsap.fromTo(
+                ".nav-tabs button",
+                { opacity: 0, y: -20 },
+                { opacity: 1, y: 0, duration: 0.5, stagger: 0.1 }
+              );
+            }, 4000);
+          },
+        });
+      }
+
+      gsap.to(forms, {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.4,
+        onComplete: () => {
+          forms.forEach((form) => (form.style.display = "none"));
+          formSections.style.display = "none";
+        },
+      });
+    </script>
+  </body>
+</html>
