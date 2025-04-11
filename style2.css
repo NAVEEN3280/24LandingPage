@@ -254,6 +254,7 @@ body {
 .carousel-wrapper {
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .form-sections {
