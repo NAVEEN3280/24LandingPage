@@ -365,6 +365,29 @@ h3 {
   animation: drawCheck 0.4s 0.6s ease-out forwards;
 }
 
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.social li {
+  list-style: none;
+}
+
+.social li a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.social li a:hover {
+  color: rgb(253, 191, 15);
+}
+
 @keyframes drawCircle {
   to {
     stroke-dashoffset: 0;
@@ -453,9 +476,13 @@ h3 {
   .info-item p,
   li {
     font-size: 0.75rem;
+    line-height: 1.2rem;
   }
   .logo {
     margin: 0;
     width: 100%;
+  }
+  .social li a {
+    font-size: 1.5rem;
   }
 }
