@@ -486,3 +486,21 @@ h3 {
     font-size: 1.5rem;
   }
 }
+
+@media all and (max-width: 480px) and (min-height: 840px) {
+  .carousel-wrapper {
+    height: 100vh;
+  }
+  body {
+    height: 100vh;
+  }
+  .nav-tabs {
+    top: 28%;
+  }
+  .img-box {
+    bottom: -1080px;
+  }
+  .form-sections {
+    top: 50%;
+  }
+}
