@@ -23,7 +23,7 @@ body {
 }
 .logo p {
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   line-height: 1.25rem;
 }
 
@@ -117,7 +117,7 @@ body {
 }
 
 .info-item p {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   line-height: 1.2rem;
 }
 .navigation {
@@ -194,7 +194,7 @@ body {
 .nav-btn {
   padding: 10px 20px;
   margin: 0 5px;
-  font-size: 0.7rem;
+  font-size: 0.73rem;
   cursor: pointer;
   border: none;
   background: rgb(253, 191, 15);
