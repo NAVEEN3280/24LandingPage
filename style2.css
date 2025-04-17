@@ -414,6 +414,7 @@ h3 {
     transform: scale(1);
   }
 }
+
 @media all and (max-width: 768px) {
   body {
     overflow-x: hidden;

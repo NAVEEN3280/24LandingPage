@@ -244,6 +244,10 @@
         </div>
       </div>
     </div>
+    <button id="downloadExcel" style="display: none;">Download Excel</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
     <script
       src="https://kit.fontawesome.com/d114828075.js"
       crossorigin="anonymous"
@@ -256,24 +260,20 @@
       const navTabs = document.querySelector(".nav-tabs");
       const formSections = document.querySelector(".form-sections");
       const forms = document.querySelectorAll(".role-form");
-
+    
       let currentIndex = 0;
-
+      const formEntries = [];
+    
       function goToSlide(index) {
         currentIndex = index;
-
-        // Rotate image carousel
         imgSlider.style.transform = `rotate(${-90 * index}deg)`;
-
-        // Update active fruit
+    
         document.querySelector(".fruit.active").classList.remove("active");
         imgFruit[index].classList.add("active");
-
-        // Update active background
+    
         document.querySelector(".bg.active").classList.remove("active");
         bgs[index].classList.add("active");
-
-        // Animate info box one-by-one
+    
         const infoItems = document.querySelectorAll(".info-item");
         infoItems.forEach((item, i) => {
           if (i === index) {
@@ -290,14 +290,13 @@
           }
         });
       }
-
+    
       function handleNavClick(index, type) {
         goToSlide(index);
-
+    
         const targetForm = document.getElementById(`${type}-form`);
         formSections.style.display = "flex";
-
-        // Hide all forms first
+    
         forms.forEach((form) => {
           if (form !== targetForm) {
             gsap.to(form, {
@@ -310,14 +309,11 @@
             });
           }
         });
-
-        // Show target form
-        // Set display and prepare hidden state
+    
         targetForm.style.display = "flex";
         targetForm.style.opacity = 0;
         targetForm.style.transform = "translateY(40px)";
-
-        // Animate to center smoothly
+    
         gsap.to(targetForm, {
           opacity: 1,
           y: 0,
@@ -326,12 +322,39 @@
           ease: "power2.out",
         });
       }
-
+    
       function hideForm(formElement) {
-        const nameInput = formElement.querySelector('input[type="text"]');
-        const userName = nameInput ? nameInput.value : "User";
-        document.getElementById("userNameDisplay").textContent = userName;
-
+        const name = formElement.querySelector('input[type="text"]').value.trim();
+        const email = formElement.querySelector('input[type="email"]').value.trim();
+        const phone = formElement.querySelector('input[type="tel"]').value.trim();
+        const city = formElement.querySelector("select").value.trim();
+        const role = formElement.querySelector("h3").textContent;
+    
+        if (!name || !email || !phone || !city || city === "Select City") {
+          alert("Please fill in all fields before submitting the form.");
+          return;
+        }
+    
+        fetch("submit.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            phone,
+            city,
+            role,
+            timestamp: new Date().toLocaleString(),
+          }),
+        })
+          .then((res) => res.text())
+          .then((data) => console.log(data))
+          .catch((err) => console.error("Error submitting form:", err));
+    
+        document.getElementById("userNameDisplay").textContent = name || "User";
+    
         gsap.to(formElement, {
           opacity: 0,
           scale: 0.9,
@@ -345,12 +368,11 @@
               { opacity: 0, y: 30, scale: 0.8 },
               { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power2.out" }
             );
-
+    
             setTimeout(() => {
               thankYou.style.display = "none";
-              document.querySelector(".form-sections").style.display = "none";
-              document.querySelector(".carousel-wrapper").style.display =
-                "block";
+              formSections.style.display = "none";
+              document.querySelector(".carousel-wrapper").style.display = "block";
               navTabs.style.display = "flex";
               gsap.fromTo(
                 ".nav-tabs button",
@@ -361,16 +383,119 @@
           },
         });
       }
-
-      gsap.to(forms, {
-        scale: 0.8,
-        opacity: 0,
-        duration: 0.4,
-        onComplete: () => {
-          forms.forEach((form) => (form.style.display = "none"));
-          formSections.style.display = "none";
-        },
+    
+      // Attach submit listeners to each form
+      forms.forEach((form) => {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+    
+          const name = form.querySelector('input[type="text"]').value.trim();
+          const email = form.querySelector('input[type="email"]').value.trim();
+          const phone = form.querySelector('input[type="tel"]').value.trim();
+          const city = form.querySelector("select").value.trim();
+          const role = form.querySelector("h3").textContent;
+          const timestamp = new Date().toLocaleString();
+    
+          const formData = { name, email, phone, city, role, timestamp };
+          formEntries.push(formData); // save to global array
+    
+          form.reset();
+          alert("Form submitted!");
+        });
       });
+    
+      document.addEventListener("keydown", (e) => {
+  if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "e") {
+    e.preventDefault();
+
+    const timestamp = new Date().getTime(); // Bypass cache
+
+    fetch(`form_submissions.csv?t=${timestamp}`)
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to fetch CSV file.");
+        return response.text();
+      })
+      .then((csvText) => {
+        const rows = csvText.trim().split("\n").map(row => row.split(","));
+        if (rows.length <= 1) {
+          alert("No data to export.");
+          return;
+        }
+
+        const worksheet = XLSX.utils.aoa_to_sheet(rows);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Form Submissions");
+
+        XLSX.writeFile(workbook, "form_submissions.xlsx");
+      })
+      .catch((err) => {
+        console.error("Error fetching CSV:", err);
+        alert("Error fetching CSV file. Make sure it exists and is accessible.");
+      });
+  }
+});
+
+
+document.getElementById("adminDownload").addEventListener("click", () => {
+  const timestamp = new Date().getTime();
+  fetch(`form_submissions.csv?t=${timestamp}`)
+    .then((response) => {
+      if (!response.ok) throw new Error("Failed to fetch CSV file.");
+      return response.text();
+    })
+    .then((csvText) => {
+      const rows = csvText.trim().split("\n").map(row => row.split(","));
+      if (rows.length <= 1) {
+        alert("No data to export.");
+        return;
+      }
+
+      const worksheet = XLSX.utils.aoa_to_sheet(rows);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Form Submissions");
+
+      XLSX.writeFile(workbook, "form_submissions.xlsx");
+    })
+    .catch((err) => {
+      console.error("Error fetching CSV:", err);
+      alert("Error fetching CSV file. Make sure it exists and is accessible.");
+    });
+});
+
+    
+      // Manual download button logic
+      const downloadBtn = document.getElementById("downloadExcel");
+      if (downloadBtn) document.addEventListener("keydown", (e) => {
+  if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "f") {
+    e.preventDefault();
+
+    fetch("form_submissions.csv")
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to fetch CSV file.");
+        return response.text();
+      })
+      .then((csvText) => {
+        const rows = csvText.trim().split("\n").map(row => row.split(","));
+        if (rows.length <= 1) {
+          alert("No data to export.");
+          return;
+        }
+
+        const worksheet = XLSX.utils.aoa_to_sheet(rows);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Form Submissions");
+
+        XLSX.writeFile(workbook, "form_submissions.xlsx");
+      })
+      .catch((err) => {
+        console.error("Error fetching CSV:", err);
+        alert("Error fetching CSV file. Make sure it exists and is accessible.");
+      });
+  }
+});
+
     </script>
+    
+
   </body>
 </html>
