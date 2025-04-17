@@ -36,15 +36,26 @@
     <div class="form-sections">
       <form id="manufacturer-form" class="role-form">
         <h3>Manufacturer</h3>
-        <input type="text" placeholder="Name" required />
-        <input type="email" placeholder="Email" required />
+        <input type="text" name="name" placeholder="Name" required />
+        
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+        />
+      
         <input
           type="tel"
-          name="userPhone"
+          name="phone"
           placeholder="Phone Number"
           required
+          pattern="^\d{10}$"
+          title="Phone number must be 10 digits"
         />
-        <select required>
+      
+        <select name="city" required>
           <option value="" disabled selected>Select your city</option>
           <option>Mumbai</option>
           <option>Delhi</option>
@@ -61,21 +72,32 @@
           <option>Patna</option>
           <option>Chandigarh</option>
         </select>
-        <button type="button" onclick="hideForm(this.closest('form'))">
-          Submit
-        </button>
+      
+        <button type="button" onclick="hideForm(this.closest('form'))">Submit</button>
       </form>
-      <form id="channel-form" class="role-form">
+      
+      <form id="manufacturer-form" class="role-form">
         <h3>Channel Partner</h3>
-        <input type="text" placeholder="Name" required />
-        <input type="email" placeholder="Email" required />
+        <input type="text" name="name" placeholder="Name" required />
+        
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+        />
+      
         <input
           type="tel"
-          name="userPhone"
+          name="phone"
           placeholder="Phone Number"
           required
+          pattern="^\d{10}$"
+          title="Phone number must be 10 digits"
         />
-        <select required>
+      
+        <select name="city" required>
           <option value="" disabled selected>Select your city</option>
           <option>Mumbai</option>
           <option>Delhi</option>
@@ -92,21 +114,32 @@
           <option>Patna</option>
           <option>Chandigarh</option>
         </select>
-        <button type="button" onclick="hideForm(this.closest('form'))">
-          Submit
-        </button>
+      
+        <button type="button" onclick="hideForm(this.closest('form'))">Submit</button>
       </form>
-      <form id="retailer-form" class="role-form">
+      
+      <form id="manufacturer-form" class="role-form">
         <h3>Retailer</h3>
-        <input type="text" placeholder="Name" required />
-        <input type="email" placeholder="Email" required />
+        <input type="text" name="name" placeholder="Name" required />
+        
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+        />
+      
         <input
           type="tel"
-          name="userPhone"
+          name="phone"
           placeholder="Phone Number"
           required
+          pattern="^\d{10}$"
+          title="Phone number must be 10 digits"
         />
-        <select required>
+      
+        <select name="city" required>
           <option value="" disabled selected>Select your city</option>
           <option>Mumbai</option>
           <option>Delhi</option>
@@ -123,10 +156,10 @@
           <option>Patna</option>
           <option>Chandigarh</option>
         </select>
-        <button type="button" onclick="hideForm(this.closest('form'))">
-          Submit
-        </button>
+      
+        <button type="button" onclick="hideForm(this.closest('form'))">Submit</button>
       </form>
+      
       <div id="thankYouMessage" class="thank-you-message">
         <div class="tick-container">
           <svg class="tick-circle" viewBox="0 0 52 52">
@@ -324,16 +357,29 @@
       }
     
       function hideForm(formElement) {
-        const name = formElement.querySelector('input[type="text"]').value.trim();
-        const email = formElement.querySelector('input[type="email"]').value.trim();
-        const phone = formElement.querySelector('input[type="tel"]').value.trim();
-        const city = formElement.querySelector("select").value.trim();
-        const role = formElement.querySelector("h3").textContent;
-    
-        if (!name || !email || !phone || !city || city === "Select City") {
-          alert("Please fill in all fields before submitting the form.");
-          return;
-        }
+  const name = formElement.querySelector('input[name="name"]').value.trim();
+  const email = formElement.querySelector('input[name="email"]').value.trim();
+  const phone = formElement.querySelector('input[name="phone"]').value.trim();
+  const city = formElement.querySelector("select[name='city']").value.trim();
+  const role = formElement.querySelector("h3").textContent;
+
+  const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  const phoneRegex = /^\d{10}$/;
+
+  if (!name || !email || !phone || !city || city === "Select your city") {
+    alert("Please fill in all fields before submitting the form.");
+    return;
+  }
+
+  if (!emailRegex.test(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  if (!phoneRegex.test(phone)) {
+    alert("Phone number must be exactly 10 digits.");
+    return;
+  }
     
         fetch("submit.php", {
           method: "POST",
