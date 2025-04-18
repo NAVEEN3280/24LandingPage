@@ -30,10 +30,10 @@ body {
 .img-box {
   position: absolute;
   width: 1600px;
-  left: 50%;
-  transform: translateX(-50%);
   height: 1600px;
-  bottom: -1100px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -7%); /* Adjust 25% to fine-tune vertical offset */
 }
 
 .img-box .img-list {
@@ -191,10 +191,6 @@ body {
   background: #00aab0;
 }
 
-.nav-tabs {
-  text-align: center;
-  margin: 20px 0;
-}
 .nav-btn {
   padding: 10px 20px;
   margin: 0 5px;
@@ -238,13 +234,15 @@ body {
   cursor: pointer;
 }
 .nav-tabs {
-  position: absolute;
-  top: 45%;
-  margin: 0 3rem;
+  /* position: absolute;
+  top: 45%; */
   z-index: 1000;
   display: flex;
+  margin-top: 3rem;
+  width: 40%;
   flex-direction: column;
   gap: 1.5rem;
+  text-align: center;
 }
 .form-tabs {
   position: absolute;
@@ -435,15 +433,21 @@ h3 {
     height: 120vh;
   }
   .nav-tabs {
-    margin: 0;
-    top: 40%;
+    /* position: absolute; */
+    /* top: 50vh;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%); */
     width: 100%;
+    z-index: 1000;
     display: flex;
+    margin: 0;
     flex-direction: row;
     gap: 0.5rem;
     justify-content: center;
     align-items: center;
   }
+
   .role-form {
     padding: 10px;
     gap: 5px;
@@ -501,9 +505,9 @@ h3 {
   body {
     height: 100vh;
   }
-  .nav-tabs {
+  /* .nav-tabs {
     top: 26%;
-  }
+  } */
   .img-box {
     bottom: -1020px;
   }

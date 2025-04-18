@@ -20,107 +20,134 @@
         selling. We bridge the gap between Manufacturers and Retailers, making
         jewellery sourcing and selling Faster, Smarter and Hassle-free.
       </p>
-    </div>
-    <div class="nav-tabs">
-      <button class="nav-btn" onclick="handleNavClick(1, 'manufacturer')">
-        Manufacturer
-      </button>
-      <button class="nav-btn" onclick="handleNavClick(2, 'channel-partner')">
-        Channel Partner
-      </button>
-      <button class="nav-btn" onclick="handleNavClick(3, 'retailer')">
-        Retailer
-      </button>
+      <div class="nav-tabs">
+        <button class="nav-btn" onclick="handleNavClick(1, 'manufacturer')">
+          Manufacturer
+        </button>
+        <button class="nav-btn" onclick="handleNavClick(2, 'channel-partner')">
+          Channel Partner
+        </button>
+        <button class="nav-btn" onclick="handleNavClick(3, 'retailer')">
+          Retailer
+        </button>
+      </div>
     </div>
 
     <div class="form-sections">
-  <form id="manufacturer-form" class="role-form" data-role="Manufacturer">
-    <h3>Manufacturer</h3>
-    <input type="text" name="name" placeholder="Name" required />
-    <input type="email" name="email" placeholder="Email" required />
-    <input type="tel" name="phone" placeholder="Phone Number" required pattern="^\d{10}$" title="Phone number must be 10 digits" />
-    <select name="city" required>
-      <option value="" disabled selected>Select your city</option>
-      <option>Mumbai</option>
-      <option>Delhi</option>
-      <option>Bangalore</option>
-      <option>Hyderabad</option>
-      <option>Ahmedabad</option>
-      <option>Chennai</option>
-      <option>Kolkata</option>
-      <option>Pune</option>
-      <option>Jaipur</option>
-      <option>Lucknow</option>
-      <option>Indore</option>
-      <option>Surat</option>
-      <option>Patna</option>
-      <option>Chandigarh</option>
-    </select>
-    <button type="submit">Submit</button>
-  </form>
+      <!-- Forms here -->
+      <form id="manufacturer-form" class="role-form" data-role="Manufacturer">
+        <h3>Manufacturer</h3>
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          required
+          pattern="^\d{10}$"
+          title="Phone number must be 10 digits"
+        />
+        <select name="city" required>
+          <option value="" disabled selected>Select your city</option>
+          <option>Mumbai</option>
+          <option>Delhi</option>
+          <option>Bangalore</option>
+          <option>Hyderabad</option>
+          <option>Ahmedabad</option>
+          <option>Chennai</option>
+          <option>Kolkata</option>
+          <option>Pune</option>
+          <option>Jaipur</option>
+          <option>Lucknow</option>
+          <option>Indore</option>
+          <option>Surat</option>
+          <option>Patna</option>
+          <option>Chandigarh</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
 
-  <form id="channel-partner-form" class="role-form" data-role="Channel Partner">
-    <h3>Channel Partner</h3>
-    <input type="text" name="name" placeholder="Name" required />
-    <input type="email" name="email" placeholder="Email" required />
-    <input type="tel" name="phone" placeholder="Phone Number" required pattern="^\d{10}$" title="Phone number must be 10 digits" />
-    <select name="city" required>
-      <option value="" disabled selected>Select your city</option>
-      <option>Mumbai</option>
-      <option>Delhi</option>
-      <option>Bangalore</option>
-      <option>Hyderabad</option>
-      <option>Ahmedabad</option>
-      <option>Chennai</option>
-      <option>Kolkata</option>
-      <option>Pune</option>
-      <option>Jaipur</option>
-      <option>Lucknow</option>
-      <option>Indore</option>
-      <option>Surat</option>
-      <option>Patna</option>
-      <option>Chandigarh</option>
-    </select>
-    <button type="submit">Submit</button>
-  </form>
+      <form
+        id="channel-partner-form"
+        class="role-form"
+        data-role="Channel Partner"
+      >
+        <h3>Channel Partner</h3>
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          required
+          pattern="^\d{10}$"
+          title="Phone number must be 10 digits"
+        />
+        <select name="city" required>
+          <option value="" disabled selected>Select your city</option>
+          <option>Mumbai</option>
+          <option>Delhi</option>
+          <option>Bangalore</option>
+          <option>Hyderabad</option>
+          <option>Ahmedabad</option>
+          <option>Chennai</option>
+          <option>Kolkata</option>
+          <option>Pune</option>
+          <option>Jaipur</option>
+          <option>Lucknow</option>
+          <option>Indore</option>
+          <option>Surat</option>
+          <option>Patna</option>
+          <option>Chandigarh</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
 
-  <form id="retailer-form" class="role-form" data-role="Retailer">
-    <h3>Retailer</h3>
-    <input type="text" name="name" placeholder="Name" required />
-    <input type="email" name="email" placeholder="Email" required />
-    <input type="tel" name="phone" placeholder="Phone Number" required pattern="^\d{10}$" title="Phone number must be 10 digits" />
-    <select name="city" required>
-      <option value="" disabled selected>Select your city</option>
-      <option>Mumbai</option>
-      <option>Delhi</option>
-      <option>Bangalore</option>
-      <option>Hyderabad</option>
-      <option>Ahmedabad</option>
-      <option>Chennai</option>
-      <option>Kolkata</option>
-      <option>Pune</option>
-      <option>Jaipur</option>
-      <option>Lucknow</option>
-      <option>Indore</option>
-      <option>Surat</option>
-      <option>Patna</option>
-      <option>Chandigarh</option>
-    </select>
-    <button type="submit">Submit</button>
-  </form>
+      <form id="retailer-form" class="role-form" data-role="Retailer">
+        <h3>Retailer</h3>
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          required
+          pattern="^\d{10}$"
+          title="Phone number must be 10 digits"
+        />
+        <select name="city" required>
+          <option value="" disabled selected>Select your city</option>
+          <option>Mumbai</option>
+          <option>Delhi</option>
+          <option>Bangalore</option>
+          <option>Hyderabad</option>
+          <option>Ahmedabad</option>
+          <option>Chennai</option>
+          <option>Kolkata</option>
+          <option>Pune</option>
+          <option>Jaipur</option>
+          <option>Lucknow</option>
+          <option>Indore</option>
+          <option>Surat</option>
+          <option>Patna</option>
+          <option>Chandigarh</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
 
-  <div id="thankYouMessage" class="thank-you-message">
-    <div class="tick-container">
-      <svg class="tick-circle" viewBox="0 0 52 52">
-        <circle class="tick-bg" cx="26" cy="26" r="25" fill="none" />
-        <path class="tick-check" fill="none" d="M14 27l7 7 17-17" />
-      </svg>
+      <div id="thankYouMessage" class="thank-you-message">
+        <div class="tick-container">
+          <svg class="tick-circle" viewBox="0 0 52 52">
+            <circle class="tick-bg" cx="26" cy="26" r="25" fill="none" />
+            <path class="tick-check" fill="none" d="M14 27l7 7 17-17" />
+          </svg>
+        </div>
+        <h3>Thank you, <span id="userNameDisplay"></span>!</h3>
+        <p>
+          Thanks for your interest. Our team will get in touch with you shortly.
+        </p>
+      </div>
     </div>
-    <h3>Thank you, <span id="userNameDisplay"></span>!</h3>
-    <p>Thanks for your interest. Our team will get in touch with you shortly.</p>
-  </div>
-</div>
-
 
     <div class="carousel-wrapper">
       <div class="carousel">
@@ -165,8 +192,7 @@
             <div class="info-item">
               <h2>Our Socials</h2>
               <p>Check our social media for the latest updates!</p>
-              <p>
-                <ul class="social">
+              <ul class="social">
                 <li>
                   <a
                     href="https://www.instagram.com/twenty4jewellery/"
@@ -189,7 +215,6 @@
                   ></a>
                 </li>
               </ul>
-              </p>
             </div>
             <div class="info-item">
               <h2>Manufacturer</h2>
@@ -225,10 +250,10 @@
         </div>
       </div>
     </div>
-    <button id="downloadExcel" style="display: none;">Download Excel</button>
+
+    <button id="downloadExcel" style="display: none">Download Excel</button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-
     <script
       src="https://kit.fontawesome.com/d114828075.js"
       crossorigin="anonymous"
@@ -241,20 +266,20 @@
       const navTabs = document.querySelector(".nav-tabs");
       const formSections = document.querySelector(".form-sections");
       const forms = document.querySelectorAll(".role-form");
-    
+
       let currentIndex = 0;
       const formEntries = [];
-    
+
       function goToSlide(index) {
         currentIndex = index;
         imgSlider.style.transform = `rotate(${-90 * index}deg)`;
-    
+
         document.querySelector(".fruit.active").classList.remove("active");
         imgFruit[index].classList.add("active");
-    
+
         document.querySelector(".bg.active").classList.remove("active");
         bgs[index].classList.add("active");
-    
+
         const infoItems = document.querySelectorAll(".info-item");
         infoItems.forEach((item, i) => {
           if (i === index) {
@@ -271,102 +296,107 @@
           }
         });
       }
-    
+
       function handleNavClick(index, type) {
-  goToSlide(index);
+        goToSlide(index);
 
-  const targetForm = document.getElementById(`${type}-form`);
+        const targetForm = document.getElementById(`${type}-form`);
 
-  if (!targetForm) {
-    console.error(`Form with type "${type}" not found.`);
-    return;
-  }
+        if (!targetForm) {
+          console.error(`Form with type "${type}" not found.`);
+          return;
+        }
 
-  formSections.style.display = "flex";
+        formSections.style.display = "flex";
 
-  forms.forEach((form) => {
-  if (form !== targetForm) {
-    // Animate hiding other forms
-    gsap.to(form, {
-      scale: 0.8,
-      opacity: 0,
-      duration: 0.3,
-      onComplete: () => {
-        form.style.display = "none";
-      },
-    });
-  }
-});
+        forms.forEach((form) => {
+          if (form !== targetForm) {
+            // Animate hiding other forms
+            gsap.to(form, {
+              scale: 0.8,
+              opacity: 0,
+              duration: 0.3,
+              onComplete: () => {
+                form.style.display = "none";
+              },
+            });
+          }
+        });
 
-// Ensure the target form is visible before animating it in
-targetForm.style.display = "flex";
-targetForm.style.opacity = 0;
-targetForm.style.transform = "translateY(40px) scale(0.8)";
+        // Ensure the target form is visible before animating it in
+        targetForm.style.display = "flex";
+        targetForm.style.opacity = 0;
+        targetForm.style.transform = "translateY(40px) scale(0.8)";
 
-// Animate the target form in
-gsap.to(targetForm, {
-  opacity: 1,
-  y: 0,
-  scale: 1,
-  duration: 0.6,
-  ease: "power2.out",
-  onStart: () => {
-    // Force reflow to ensure animation triggers properly on subsequent clicks
-    void targetForm.offsetWidth;
-  },
-});
+        // Animate the target form in
+        gsap.to(targetForm, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          ease: "power2.out",
+          onStart: () => {
+            // Force reflow to ensure animation triggers properly on subsequent clicks
+            void targetForm.offsetWidth;
+          },
+        });
+      }
 
-}
-
-    
       function hideForm(formElement) {
-  const name = formElement.querySelector('input[name="name"]').value.trim();
-  const email = formElement.querySelector('input[name="email"]').value.trim();
-  const phone = formElement.querySelector('input[name="phone"]').value.trim();
-  const city = formElement.querySelector("select[name='city']").value.trim();
-  const role = formElement.querySelector("h3").textContent;
+        const name = formElement
+          .querySelector('input[name="name"]')
+          .value.trim();
+        const email = formElement
+          .querySelector('input[name="email"]')
+          .value.trim();
+        const phone = formElement
+          .querySelector('input[name="phone"]')
+          .value.trim();
+        const city = formElement
+          .querySelector("select[name='city']")
+          .value.trim();
+        const role = formElement.querySelector("h3").textContent;
 
-  const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-  const phoneRegex = /^\d{10}$/;
+        const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+        const phoneRegex = /^\d{10}$/;
 
-  if (!name || !email || !phone || !city || city === "Select your city") {
-    alert("Please fill in all fields before submitting the form.");
-    return;
-  }
+        if (!name || !email || !phone || !city || city === "Select your city") {
+          alert("Please fill in all fields before submitting the form.");
+          return;
+        }
 
-  if (!emailRegex.test(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
+        if (!emailRegex.test(email)) {
+          alert("Please enter a valid email address.");
+          return;
+        }
 
-  if (!phoneRegex.test(phone)) {
-    alert("Phone number must be exactly 10 digits.");
-    return;
-  }
-    
+        if (!phoneRegex.test(phone)) {
+          alert("Phone number must be exactly 10 digits.");
+          return;
+        }
+
         fetch("submit.php", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    name,
-    email,
-    phone,
-    city,
-    role,
-    timestamp: new Date().toLocaleString(),
-  }),
-})
-  .then((res) => res.text())
-  .then((data) => {
-    console.log(data);  // Log the response from PHP
-  })
-  .catch((err) => console.error("Error submitting form:", err));
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            phone,
+            city,
+            role,
+            timestamp: new Date().toLocaleString(),
+          }),
+        })
+          .then((res) => res.text())
+          .then((data) => {
+            console.log(data); // Log the response from PHP
+          })
+          .catch((err) => console.error("Error submitting form:", err));
 
-    
         document.getElementById("userNameDisplay").textContent = name || "User";
-    
+
         gsap.to(formElement, {
           opacity: 0,
           scale: 0.9,
@@ -380,11 +410,12 @@ gsap.to(targetForm, {
               { opacity: 0, y: 30, scale: 0.8 },
               { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power2.out" }
             );
-    
+
             setTimeout(() => {
               thankYou.style.display = "none";
               formSections.style.display = "none";
-              document.querySelector(".carousel-wrapper").style.display = "block";
+              document.querySelector(".carousel-wrapper").style.display =
+                "block";
               navTabs.style.display = "flex";
               gsap.fromTo(
                 ".nav-tabs button",
@@ -395,170 +426,194 @@ gsap.to(targetForm, {
           },
         });
       }
-    
+
       // Attach submit listeners to each form
       forms.forEach((form) => {
         form.addEventListener("submit", function (e) {
-    e.preventDefault();
+          e.preventDefault();
 
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
 
-    data.role = form.getAttribute("data-role");
-    data.timestamp = new Date().toISOString();
+          data.role = form.getAttribute("data-role");
+          data.timestamp = new Date().toISOString();
 
-    fetch("submit.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.text())
-      .then((response) => {
-        console.log(response); // Debug log
-
-        if (response.includes("saved")) {
-          // Animate form out
-          gsap.to(form, {
-            scale: 0.8,
-            opacity: 0,
-            duration: 0.4,
-            onComplete: () => {
-              form.style.display = "none";
-
-              // Set name in thank you message
-              document.getElementById("userNameDisplay").textContent = data.name;
-
-              const thankYou = document.getElementById("thankYouMessage");
-              thankYou.style.display = "flex";
-              thankYou.style.opacity = 0;
-              thankYou.style.transform = "translateY(30px)";
-
-              // Animate thank you message in
-              gsap.to(thankYou, {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                ease: "power2.out",
-              });
-              setTimeout(() => {
-  gsap.to(thankYou, {
-    opacity: 0,
-    y: 30,
-    duration: 0.5,
-    onComplete: () => {
-      thankYou.style.display = "none";
-      // 👇 Trigger carousel return or reset UI here
-      resetToCarousel();
-    }
-  });
-}, 5000);
+          fetch("submit.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
             },
-          });
-        } else {
-          alert("There was an error. Please try again.");
-        }
-      })
-      .catch((err) => {
-        console.error("Submission error:", err);
-        alert("Something went wrong. Please check console.");
+            body: JSON.stringify(data),
+          })
+            .then((res) => res.text())
+            .then((response) => {
+              console.log(response); // Debug log
+
+              if (response.includes("saved")) {
+                // Animate form out
+                gsap.to(form, {
+                  scale: 0.8,
+                  opacity: 0,
+                  duration: 0.4,
+                  onComplete: () => {
+                    form.style.display = "none";
+
+                    // Set name in thank you message
+                    document.getElementById("userNameDisplay").textContent =
+                      data.name;
+
+                    const thankYou = document.getElementById("thankYouMessage");
+                    thankYou.style.display = "flex";
+                    thankYou.style.opacity = 0;
+                    thankYou.style.transform = "translateY(30px)";
+
+                    // Animate thank you message in
+                    gsap.to(thankYou, {
+                      opacity: 1,
+                      y: 0,
+                      duration: 0.6,
+                      ease: "power2.out",
+                    });
+                    setTimeout(() => {
+                      gsap.to(thankYou, {
+                        opacity: 0,
+                        y: 30,
+                        duration: 0.5,
+                        onComplete: () => {
+                          thankYou.style.display = "none";
+                          // 👇 Trigger carousel return or reset UI here
+                          resetToCarousel();
+                        },
+                      });
+                    }, 5000);
+                  },
+                });
+              } else {
+                alert("There was an error. Please try again.");
+              }
+            })
+            .catch((err) => {
+              console.error("Submission error:", err);
+              alert("Something went wrong. Please check console.");
+            });
+        });
       });
-  });
-});
-    
+
       document.addEventListener("keydown", (e) => {
-  if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "e") {
-    e.preventDefault();
+        if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "e") {
+          e.preventDefault();
 
-    const timestamp = new Date().getTime(); // Bypass cache
+          const timestamp = new Date().getTime(); // Bypass cache
 
-    fetch(`form_submissions.csv?t=${timestamp}`)
-      .then((response) => {
-        if (!response.ok) throw new Error("Failed to fetch CSV file.");
-        return response.text();
-      })
-      .then((csvText) => {
-        const rows = csvText.trim().split("\n").map(row => row.split(","));
-        if (rows.length <= 1) {
-          alert("No data to export.");
-          return;
+          fetch(`form_submissions.csv?t=${timestamp}`)
+            .then((response) => {
+              if (!response.ok) throw new Error("Failed to fetch CSV file.");
+              return response.text();
+            })
+            .then((csvText) => {
+              const rows = csvText
+                .trim()
+                .split("\n")
+                .map((row) => row.split(","));
+              if (rows.length <= 1) {
+                alert("No data to export.");
+                return;
+              }
+
+              const worksheet = XLSX.utils.aoa_to_sheet(rows);
+              const workbook = XLSX.utils.book_new();
+              XLSX.utils.book_append_sheet(
+                workbook,
+                worksheet,
+                "Form Submissions"
+              );
+
+              XLSX.writeFile(workbook, "form_submissions.xlsx");
+            })
+            .catch((err) => {
+              console.error("Error fetching CSV:", err);
+              alert(
+                "Error fetching CSV file. Make sure it exists and is accessible."
+              );
+            });
         }
-
-        const worksheet = XLSX.utils.aoa_to_sheet(rows);
-        const workbook = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(workbook, worksheet, "Form Submissions");
-
-        XLSX.writeFile(workbook, "form_submissions.xlsx");
-      })
-      .catch((err) => {
-        console.error("Error fetching CSV:", err);
-        alert("Error fetching CSV file. Make sure it exists and is accessible.");
       });
-  }
-});
 
+      document.getElementById("adminDownload").addEventListener("click", () => {
+        const timestamp = new Date().getTime();
+        fetch(`form_submissions.csv?t=${timestamp}`)
+          .then((response) => {
+            if (!response.ok) throw new Error("Failed to fetch CSV file.");
+            return response.text();
+          })
+          .then((csvText) => {
+            const rows = csvText
+              .trim()
+              .split("\n")
+              .map((row) => row.split(","));
+            if (rows.length <= 1) {
+              alert("No data to export.");
+              return;
+            }
 
-document.getElementById("adminDownload").addEventListener("click", () => {
-  const timestamp = new Date().getTime();
-  fetch(`form_submissions.csv?t=${timestamp}`)
-    .then((response) => {
-      if (!response.ok) throw new Error("Failed to fetch CSV file.");
-      return response.text();
-    })
-    .then((csvText) => {
-      const rows = csvText.trim().split("\n").map(row => row.split(","));
-      if (rows.length <= 1) {
-        alert("No data to export.");
-        return;
-      }
+            const worksheet = XLSX.utils.aoa_to_sheet(rows);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(
+              workbook,
+              worksheet,
+              "Form Submissions"
+            );
 
-      const worksheet = XLSX.utils.aoa_to_sheet(rows);
-      const workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, worksheet, "Form Submissions");
+            XLSX.writeFile(workbook, "form_submissions.xlsx");
+          })
+          .catch((err) => {
+            console.error("Error fetching CSV:", err);
+            alert(
+              "Error fetching CSV file. Make sure it exists and is accessible."
+            );
+          });
+      });
 
-      XLSX.writeFile(workbook, "form_submissions.xlsx");
-    })
-    .catch((err) => {
-      console.error("Error fetching CSV:", err);
-      alert("Error fetching CSV file. Make sure it exists and is accessible.");
-    });
-});
-
-    
       // Manual download button logic
       const downloadBtn = document.getElementById("downloadExcel");
-      if (downloadBtn) document.addEventListener("keydown", (e) => {
-  if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "f") {
-    e.preventDefault();
+      if (downloadBtn)
+        document.addEventListener("keydown", (e) => {
+          if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "f") {
+            e.preventDefault();
 
-    fetch("form_submissions.csv")
-      .then((response) => {
-        if (!response.ok) throw new Error("Failed to fetch CSV file.");
-        return response.text();
-      })
-      .then((csvText) => {
-        const rows = csvText.trim().split("\n").map(row => row.split(","));
-        if (rows.length <= 1) {
-          alert("No data to export.");
-          return;
-        }
+            fetch("form_submissions.csv")
+              .then((response) => {
+                if (!response.ok) throw new Error("Failed to fetch CSV file.");
+                return response.text();
+              })
+              .then((csvText) => {
+                const rows = csvText
+                  .trim()
+                  .split("\n")
+                  .map((row) => row.split(","));
+                if (rows.length <= 1) {
+                  alert("No data to export.");
+                  return;
+                }
 
-        const worksheet = XLSX.utils.aoa_to_sheet(rows);
-        const workbook = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(workbook, worksheet, "Form Submissions");
+                const worksheet = XLSX.utils.aoa_to_sheet(rows);
+                const workbook = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(
+                  workbook,
+                  worksheet,
+                  "Form Submissions"
+                );
 
-        XLSX.writeFile(workbook, "form_submissions.xlsx");
-      })
-      .catch((err) => {
-        console.error("Error fetching CSV:", err);
-        alert("Error fetching CSV file. Make sure it exists and is accessible.");
-      });
-  }
-});
-
+                XLSX.writeFile(workbook, "form_submissions.xlsx");
+              })
+              .catch((err) => {
+                console.error("Error fetching CSV:", err);
+                alert(
+                  "Error fetching CSV file. Make sure it exists and is accessible."
+                );
+              });
+          }
+        });
     </script>
-    
-
   </body>
 </html>
