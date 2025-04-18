@@ -477,11 +477,12 @@ h3 {
   }
   .logo p {
     padding: 1rem;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
+    text-align: justify;
   }
   .info-item p,
   .info-item li {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     line-height: 1.2rem;
   }
   .logo {
