@@ -25,7 +25,7 @@
       <button class="nav-btn" onclick="handleNavClick(1, 'manufacturer')">
         Manufacturer
       </button>
-      <button class="nav-btn" onclick="handleNavClick(2, 'channel')">
+      <button class="nav-btn" onclick="handleNavClick(2, 'channel-partner')">
         Channel Partner
       </button>
       <button class="nav-btn" onclick="handleNavClick(3, 'retailer')">
@@ -34,145 +34,93 @@
     </div>
 
     <div class="form-sections">
-      <form id="manufacturer-form" class="role-form">
-        <h3>Manufacturer</h3>
-        <input type="text" name="name" placeholder="Name" required />
-        
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
-        />
-      
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone Number"
-          required
-          pattern="^\d{10}$"
-          title="Phone number must be 10 digits"
-        />
-      
-        <select name="city" required>
-          <option value="" disabled selected>Select your city</option>
-          <option>Mumbai</option>
-          <option>Delhi</option>
-          <option>Bangalore</option>
-          <option>Hyderabad</option>
-          <option>Ahmedabad</option>
-          <option>Chennai</option>
-          <option>Kolkata</option>
-          <option>Pune</option>
-          <option>Jaipur</option>
-          <option>Lucknow</option>
-          <option>Indore</option>
-          <option>Surat</option>
-          <option>Patna</option>
-          <option>Chandigarh</option>
-        </select>
-      
-        <button type="button" onclick="hideForm(this.closest('form'))">Submit</button>
-      </form>
-      
-      <form id="manufacturer-form" class="role-form">
-        <h3>Channel Partner</h3>
-        <input type="text" name="name" placeholder="Name" required />
-        
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
-        />
-      
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone Number"
-          required
-          pattern="^\d{10}$"
-          title="Phone number must be 10 digits"
-        />
-      
-        <select name="city" required>
-          <option value="" disabled selected>Select your city</option>
-          <option>Mumbai</option>
-          <option>Delhi</option>
-          <option>Bangalore</option>
-          <option>Hyderabad</option>
-          <option>Ahmedabad</option>
-          <option>Chennai</option>
-          <option>Kolkata</option>
-          <option>Pune</option>
-          <option>Jaipur</option>
-          <option>Lucknow</option>
-          <option>Indore</option>
-          <option>Surat</option>
-          <option>Patna</option>
-          <option>Chandigarh</option>
-        </select>
-      
-        <button type="button" onclick="hideForm(this.closest('form'))">Submit</button>
-      </form>
-      
-      <form id="manufacturer-form" class="role-form">
-        <h3>Retailer</h3>
-        <input type="text" name="name" placeholder="Name" required />
-        
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
-        />
-      
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone Number"
-          required
-          pattern="^\d{10}$"
-          title="Phone number must be 10 digits"
-        />
-      
-        <select name="city" required>
-          <option value="" disabled selected>Select your city</option>
-          <option>Mumbai</option>
-          <option>Delhi</option>
-          <option>Bangalore</option>
-          <option>Hyderabad</option>
-          <option>Ahmedabad</option>
-          <option>Chennai</option>
-          <option>Kolkata</option>
-          <option>Pune</option>
-          <option>Jaipur</option>
-          <option>Lucknow</option>
-          <option>Indore</option>
-          <option>Surat</option>
-          <option>Patna</option>
-          <option>Chandigarh</option>
-        </select>
-      
-        <button type="button" onclick="hideForm(this.closest('form'))">Submit</button>
-      </form>
-      
-      <div id="thankYouMessage" class="thank-you-message">
-        <div class="tick-container">
-          <svg class="tick-circle" viewBox="0 0 52 52">
-            <circle class="tick-bg" cx="26" cy="26" r="25" fill="none" />
-            <path class="tick-check" fill="none" d="M14 27l7 7 17-17" />
-          </svg>
-        </div>
-        <h3>Thank you, <span id="userNameDisplay"></span>!</h3>
-        <p>
-          Thanks for your interest. Our team will get in touch with you shortly.
-        </p>
-      </div>
+  <form id="manufacturer-form" class="role-form" data-role="Manufacturer">
+    <h3>Manufacturer</h3>
+    <input type="text" name="name" placeholder="Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="tel" name="phone" placeholder="Phone Number" required pattern="^\d{10}$" title="Phone number must be 10 digits" />
+    <select name="city" required>
+      <option value="" disabled selected>Select your city</option>
+      <option>Mumbai</option>
+      <option>Delhi</option>
+      <option>Bangalore</option>
+      <option>Hyderabad</option>
+      <option>Ahmedabad</option>
+      <option>Chennai</option>
+      <option>Kolkata</option>
+      <option>Pune</option>
+      <option>Jaipur</option>
+      <option>Lucknow</option>
+      <option>Indore</option>
+      <option>Surat</option>
+      <option>Patna</option>
+      <option>Chandigarh</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+
+  <form id="channel-partner-form" class="role-form" data-role="Channel Partner">
+    <h3>Channel Partner</h3>
+    <input type="text" name="name" placeholder="Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="tel" name="phone" placeholder="Phone Number" required pattern="^\d{10}$" title="Phone number must be 10 digits" />
+    <select name="city" required>
+      <option value="" disabled selected>Select your city</option>
+      <option>Mumbai</option>
+      <option>Delhi</option>
+      <option>Bangalore</option>
+      <option>Hyderabad</option>
+      <option>Ahmedabad</option>
+      <option>Chennai</option>
+      <option>Kolkata</option>
+      <option>Pune</option>
+      <option>Jaipur</option>
+      <option>Lucknow</option>
+      <option>Indore</option>
+      <option>Surat</option>
+      <option>Patna</option>
+      <option>Chandigarh</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+
+  <form id="retailer-form" class="role-form" data-role="Retailer">
+    <h3>Retailer</h3>
+    <input type="text" name="name" placeholder="Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="tel" name="phone" placeholder="Phone Number" required pattern="^\d{10}$" title="Phone number must be 10 digits" />
+    <select name="city" required>
+      <option value="" disabled selected>Select your city</option>
+      <option>Mumbai</option>
+      <option>Delhi</option>
+      <option>Bangalore</option>
+      <option>Hyderabad</option>
+      <option>Ahmedabad</option>
+      <option>Chennai</option>
+      <option>Kolkata</option>
+      <option>Pune</option>
+      <option>Jaipur</option>
+      <option>Lucknow</option>
+      <option>Indore</option>
+      <option>Surat</option>
+      <option>Patna</option>
+      <option>Chandigarh</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="thankYouMessage" class="thank-you-message">
+    <div class="tick-container">
+      <svg class="tick-circle" viewBox="0 0 52 52">
+        <circle class="tick-bg" cx="26" cy="26" r="25" fill="none" />
+        <path class="tick-check" fill="none" d="M14 27l7 7 17-17" />
+      </svg>
     </div>
+    <h3>Thank you, <span id="userNameDisplay"></span>!</h3>
+    <p>Thanks for your interest. Our team will get in touch with you shortly.</p>
+  </div>
+</div>
+
 
     <div class="carousel-wrapper">
       <div class="carousel">
@@ -325,36 +273,51 @@
       }
     
       function handleNavClick(index, type) {
-        goToSlide(index);
-    
-        const targetForm = document.getElementById(`${type}-form`);
-        formSections.style.display = "flex";
-    
-        forms.forEach((form) => {
-          if (form !== targetForm) {
-            gsap.to(form, {
-              scale: 0.8,
-              opacity: 0,
-              duration: 0.3,
-              onComplete: () => {
-                form.style.display = "none";
-              },
-            });
-          }
-        });
-    
-        targetForm.style.display = "flex";
-        targetForm.style.opacity = 0;
-        targetForm.style.transform = "translateY(40px)";
-    
-        gsap.to(targetForm, {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.6,
-          ease: "power2.out",
-        });
-      }
+  goToSlide(index);
+
+  const targetForm = document.getElementById(`${type}-form`);
+
+  if (!targetForm) {
+    console.error(`Form with type "${type}" not found.`);
+    return;
+  }
+
+  formSections.style.display = "flex";
+
+  forms.forEach((form) => {
+  if (form !== targetForm) {
+    // Animate hiding other forms
+    gsap.to(form, {
+      scale: 0.8,
+      opacity: 0,
+      duration: 0.3,
+      onComplete: () => {
+        form.style.display = "none";
+      },
+    });
+  }
+});
+
+// Ensure the target form is visible before animating it in
+targetForm.style.display = "flex";
+targetForm.style.opacity = 0;
+targetForm.style.transform = "translateY(40px) scale(0.8)";
+
+// Animate the target form in
+gsap.to(targetForm, {
+  opacity: 1,
+  y: 0,
+  scale: 1,
+  duration: 0.6,
+  ease: "power2.out",
+  onStart: () => {
+    // Force reflow to ensure animation triggers properly on subsequent clicks
+    void targetForm.offsetWidth;
+  },
+});
+
+}
+
     
       function hideForm(formElement) {
   const name = formElement.querySelector('input[name="name"]').value.trim();
@@ -382,22 +345,25 @@
   }
     
         fetch("submit.php", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name,
-            email,
-            phone,
-            city,
-            role,
-            timestamp: new Date().toLocaleString(),
-          }),
-        })
-          .then((res) => res.text())
-          .then((data) => console.log(data))
-          .catch((err) => console.error("Error submitting form:", err));
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    name,
+    email,
+    phone,
+    city,
+    role,
+    timestamp: new Date().toLocaleString(),
+  }),
+})
+  .then((res) => res.text())
+  .then((data) => {
+    console.log(data);  // Log the response from PHP
+  })
+  .catch((err) => console.error("Error submitting form:", err));
+
     
         document.getElementById("userNameDisplay").textContent = name || "User";
     
@@ -433,22 +399,73 @@
       // Attach submit listeners to each form
       forms.forEach((form) => {
         form.addEventListener("submit", function (e) {
-          e.preventDefault();
-    
-          const name = form.querySelector('input[type="text"]').value.trim();
-          const email = form.querySelector('input[type="email"]').value.trim();
-          const phone = form.querySelector('input[type="tel"]').value.trim();
-          const city = form.querySelector("select").value.trim();
-          const role = form.querySelector("h3").textContent;
-          const timestamp = new Date().toLocaleString();
-    
-          const formData = { name, email, phone, city, role, timestamp };
-          formEntries.push(formData); // save to global array
-    
-          form.reset();
-          alert("Form submitted!");
-        });
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    data.role = form.getAttribute("data-role");
+    data.timestamp = new Date().toISOString();
+
+    fetch("submit.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.text())
+      .then((response) => {
+        console.log(response); // Debug log
+
+        if (response.includes("saved")) {
+          // Animate form out
+          gsap.to(form, {
+            scale: 0.8,
+            opacity: 0,
+            duration: 0.4,
+            onComplete: () => {
+              form.style.display = "none";
+
+              // Set name in thank you message
+              document.getElementById("userNameDisplay").textContent = data.name;
+
+              const thankYou = document.getElementById("thankYouMessage");
+              thankYou.style.display = "flex";
+              thankYou.style.opacity = 0;
+              thankYou.style.transform = "translateY(30px)";
+
+              // Animate thank you message in
+              gsap.to(thankYou, {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: "power2.out",
+              });
+              setTimeout(() => {
+  gsap.to(thankYou, {
+    opacity: 0,
+    y: 30,
+    duration: 0.5,
+    onComplete: () => {
+      thankYou.style.display = "none";
+      // 👇 Trigger carousel return or reset UI here
+      resetToCarousel();
+    }
+  });
+}, 5000);
+            },
+          });
+        } else {
+          alert("There was an error. Please try again.");
+        }
+      })
+      .catch((err) => {
+        console.error("Submission error:", err);
+        alert("Something went wrong. Please check console.");
       });
+  });
+});
     
       document.addEventListener("keydown", (e) => {
   if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "e") {
