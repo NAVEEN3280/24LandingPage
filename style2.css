@@ -460,6 +460,7 @@ h3 {
   .info-box {
     width: 100%;
     bottom: 5%;
+    right: 0;
   }
   .carousel-wrapper {
     overflow: hidden;
@@ -476,11 +477,11 @@ h3 {
   }
   .logo p {
     padding: 1rem;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
   }
   .info-item p,
   .info-item li {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     line-height: 1.2rem;
   }
   .logo {
@@ -500,10 +501,10 @@ h3 {
     height: 100vh;
   }
   .nav-tabs {
-    top: 28%;
+    top: 26%;
   }
   .img-box {
-    bottom: -1080px;
+    bottom: -1020px;
   }
   .form-sections {
     top: 50%;
